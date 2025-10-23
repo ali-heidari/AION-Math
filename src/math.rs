@@ -1,6 +1,6 @@
 use crate::continuous_average::continuous_average;
 
-struct Math {
+pub struct Math {
     previous_avg: f32,
     previous_count: u32,
 }
