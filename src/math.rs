@@ -6,7 +6,7 @@ struct Math {
 }
 
 impl Math {
-    pub fn new() -> Math {
+    pub fn new() -> Self {
         Self {
             previous_avg: 0.0,
             previous_count: 0,
