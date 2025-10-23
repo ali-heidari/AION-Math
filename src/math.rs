@@ -18,4 +18,18 @@ impl Math {
         self.previous_count += 1;
         avg
     }
+
+    pub fn calc_avg_and_trend(&mut self, new_value: f32, range: f32) -> (f32, i32) {
+        let prev_avg = self.previous_avg;
+        let avg = self.average(new_value);
+        let avg_dif = avg - prev_avg;
+        let trend = if avg_dif > 0.0 + range {
+            1
+        } else if avg_dif < 0.0 - range {
+            -1
+        } else {
+            0
+        };
+        (avg, trend)
+    }
 }
