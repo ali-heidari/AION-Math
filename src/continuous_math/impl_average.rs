@@ -44,13 +44,13 @@ impl ContinuousMath {
     pub fn sma(&mut self, label: u32, count: usize, new_value: f32) -> f32 {
         let frame: &mut Frame = self.get_frame(label);
 
-        if frame.values.len() < count - 1 {
-            frame.values.push_back(new_value);
+        frame.values.push_back(new_value);
+
+        if frame.values.len() < count {
             return -1.0;
         }
 
-        if frame.values.len() == count - 1 {
-            frame.values.push_back(new_value);
+        if frame.values.len() == count {
             let values = frame.values.as_slices();
             frame.calculated_value = Math::sma(values.0);
             return frame.calculated_value;
@@ -59,7 +59,27 @@ impl ContinuousMath {
         let first_value = frame.values.pop_front().unwrap();
         frame.count = count;
         frame.calculated_value += (new_value - first_value) / frame.count as f32;
+
+        frame.calculated_value
+    }
+
+    pub fn ema(&mut self, label: u32, count: usize, new_value: f32) -> f32 {
+        let frame: &mut Frame = self.get_frame(label);
+
         frame.values.push_back(new_value);
+
+        if frame.values.len() < count {
+            return -1.0;
+        }
+
+        if frame.values.len() == count {
+            let values = frame.values.as_slices();
+            frame.calculated_value = Math::sma(values.0);
+            return frame.calculated_value;
+        }
+
+        let smoothing_factor: f32 = 2.0 / (count + 1) as f32;
+        frame.calculated_value += smoothing_factor * (new_value - frame.calculated_value);
 
         frame.calculated_value
     }
@@ -112,5 +132,34 @@ mod tests {
         assert_eq!(result, 12.6);
         result = continuous_math.sma(1, 5, 13.0);
         assert_eq!(result, 13.0);
+    }
+
+    #[test]
+    fn ema() {
+        let mut continuous_math: ContinuousMath = ContinuousMath::new();
+        let mut result = continuous_math.ema(1, 10, 22.0);
+        assert_eq!(result, -1.0);
+        result = continuous_math.ema(1, 10, 24.0);
+        assert_eq!(result, -1.0);
+        result = continuous_math.ema(1, 10, 26.0);
+        assert_eq!(result, -1.0);
+        result = continuous_math.ema(1, 10, 25.0);
+        assert_eq!(result, -1.0);
+        result = continuous_math.ema(1, 10, 28.0);
+        assert_eq!(result, -1.0);
+        result = continuous_math.ema(1, 10, 27.0);
+        assert_eq!(result, -1.0);
+        result = continuous_math.ema(1, 10, 29.0);
+        assert_eq!(result, -1.0);
+        result = continuous_math.ema(1, 10, 30.0);
+        assert_eq!(result, -1.0);
+        result = continuous_math.ema(1, 10, 29.0);
+        assert_eq!(result, -1.0);
+        result = continuous_math.ema(1, 10, 32.0);
+        assert_eq!(result, 27.2);
+        result = continuous_math.ema(1, 10, 35.0);
+        assert_eq!(result, 28.618183);
+        result = continuous_math.ema(1, 10, 33.0);
+        assert_eq!(result, 29.414877);
     }
 }
