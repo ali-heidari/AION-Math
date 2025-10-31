@@ -1,6 +1,6 @@
 use std::collections::HashMap;
 
-use crate::continuous_math::{ContinuousMath, Frame};
+use crate::continuous_math::{ContinuousMath, frame::Frame};
 
 impl ContinuousMath {
     pub fn new() -> Self {

@@ -1,12 +1,11 @@
-use std::collections::HashMap;
-
+mod frame;
 mod impl_average;
 
-pub struct Frame {
-    count: u32,
-    value: f32,
-}
+use std::collections::HashMap;
 
+use crate::continuous_math::frame::Frame;
+
+#[derive(Default)]
 pub struct ContinuousMath {
     frames: HashMap<u32, Frame>,
 }
