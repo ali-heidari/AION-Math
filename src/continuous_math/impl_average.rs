@@ -104,7 +104,6 @@ impl ContinuousMath {
 
         signal_line_ema?;
 
-        println!("asds {:?}", (fast_ema, slow_ema, signal_line_ema));
         Some((macd_line, signal_line_ema.unwrap()))
     }
 }
