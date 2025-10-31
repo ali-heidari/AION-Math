@@ -10,24 +10,21 @@ impl ContinuousMath {
     }
 
     fn get_frame(&mut self, label: u32) -> &mut Frame {
-        let frame = Frame {
-            count: 0,
-            value: 0.0,
-        };
+        let frame = Frame::default();
         self.frames.entry(label).or_insert(frame)
     }
 
     pub fn average(&mut self, label: u32, new_value: f32) -> f32 {
         let frame: &mut Frame = self.get_frame(label);
-        let avg = frame.value + (new_value - frame.value) / (frame.count + 1) as f32;
-        frame.value = avg;
+        let avg = frame.calculated_value + (new_value - frame.calculated_value) / (frame.count + 1) as f32;
+        frame.calculated_value = avg;
         frame.count += 1;
         avg
     }
 
     pub fn calc_avg_and_trend(&mut self, label: u32, new_value: f32, range: f32) -> (f32, i32) {
         let frame: &mut Frame = self.get_frame(label);
-        let prev_avg = frame.value;
+        let prev_avg = frame.calculated_value;
         let avg = self.average(label, new_value);
         let avg_dif = (avg - prev_avg).abs();
         let trend = if avg_dif > 0.0 + range {
