@@ -1,17 +1,17 @@
-# 🧮 AION-MATH
-*High-Performance Mathematical Core for AI-Native Systems. Part of the AIONX ecosystem.*
+# 🧮 AIXKER-MATH
+*High-Performance Mathematical Core for AI-Native Systems. Part of the AIXKER ecosystem.*
 
 ![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)
 ![Rust](https://img.shields.io/badge/Rust-1.9+-orange)
-![Build](https://img.shields.io/github/actions/workflow/status/yourusername/aion-rlt/ci.yml)
+![Build](https://img.shields.io/github/actions/workflow/status/yourusername/aixker-rlt/ci.yml)
 ---
 
 ## Overview
 
-**AION-MATH** is a lightweight, high-performance mathematical and tensor computation library built for AI-native infrastructure.  
-It provides fast and reliable numeric operations for reinforcement learning, protocol intelligence, and distributed computing within the **AIONX ecosystem**.
+**Aixker-MATH** is a lightweight, high-performance mathematical and tensor computation library built for AI-native infrastructure.  
+It provides fast and reliable numeric operations for reinforcement learning, protocol intelligence, and distributed computing within the **AIXKER ecosystem**.
 
-Designed to integrate with **AION-RLT**, **AION Agent**, and other AIONX components, it can also be used independently as a general-purpose math and tensor toolkit for Rust-based AI or systems projects.
+Designed to integrate with **Aixker-RLT**, **AIXKER Agent**, and other Aixker components, it can also be used independently as a general-purpose math and tensor toolkit for Rust-based AI or systems projects.
 
 ---
 
@@ -21,7 +21,7 @@ Designed to integrate with **AION-RLT**, **AION Agent**, and other AIONX compone
 - 🧠 **Optimized for AI workloads** — low memory overhead and fast computations  
 - 🧩 **Modular API design** — use only what you need  
 - 🔢 **Statistical and linear algebra utilities**  
-- 🧰 **Integrates seamlessly** with AION-RLT and AION Agent  
+- 🧰 **Integrates seamlessly** with Aixker-RLT and Aixker Agent  
 
 ---
 
@@ -29,8 +29,8 @@ Designed to integrate with **AION-RLT**, **AION Agent**, and other AIONX compone
 
 ```bash
 # Clone the repository
-git clone https://github.com/ali-heidari/aion-math.git
-cd aion-math
+git clone https://github.com/ali-heidari/aixker-math.git
+cd aixker-math
 
 # Build with Cargo
 cargo build --release
@@ -40,7 +40,7 @@ Add to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-aion-math = { git = "https://github.com/ali-heidari/aion-math" }
+aixker-math = { git = "https://github.com/ali-heidari/aixker-math" }
 ```
 
 ---
@@ -81,16 +81,16 @@ Follow Rust best practices and include benchmarks for performance-related change
 ## License
 
 AION-MATH is released under the **Apache 2.0 License**.
-© 2025 Ali — part of the [AIONX Project](https://github.com/AIONX).
+© 2025 Ali — part of the [AIXKER Project](https://github.com/AIXKER).
 
-> Commercial licensing available through AIONX for enterprise integration.
+> Commercial licensing available through AIXKER for enterprise integration.
 
 ---
 
 ## Related Projects / Ecosystem
 
-* **[AION-RLT](https://github.com/AIONX/aion-rlt)** — Reinforcement Learning Trainer
-* **[AIONX Agent](https://github.com/AIONX/aionx-agent)** — AI-native node agent
+* **[Aixker-RLT](https://github.com/AIXKER/aixker-rlt)** — Reinforcement Learning Trainer
+* **[AIXKER Agent](https://github.com/AIXKER/aixker-agent)** — AI-native node agent
 * **[Falcon Metrics](https://github.com/yourusername/falcon-metrics)** — Metrics and monitoring toolkit
 
 ---
@@ -99,7 +99,7 @@ AION-MATH is released under the **Apache 2.0 License**.
 
 * GitHub: [ali-heidari](https://github.com/ali-heidari)
 * Email: [ali-heidaril@outlook.com](mailto:ali-heidari@outlook.com)
-* AIONX: [https://github.com/AIONX](https://github.com/AIONX)
+* AIXKER: [https://github.com/AIXKER](https://github.com/AIXKER)
 
 
 
