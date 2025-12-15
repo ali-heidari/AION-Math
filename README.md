@@ -60,7 +60,7 @@ fn main() {
 
 * [ ] Add advanced tensor operations
 * [ ] GPU acceleration support
-* [ ] Integration with AION-RLT training pipeline
+* [ ] Integration with Aixker-RLT training pipeline
 * [ ] Add matrix decomposition and random sampling
 * [ ] Publish to crates.io
 
@@ -80,7 +80,7 @@ Follow Rust best practices and include benchmarks for performance-related change
 
 ## License
 
-AION-MATH is released under the **Apache 2.0 License**.
+AIXKER-MATH is released under the **Apache 2.0 License**.
 © 2025 Ali — part of the [AIXKER Project](https://github.com/AIXKER).
 
 > Commercial licensing available through AIXKER for enterprise integration.
